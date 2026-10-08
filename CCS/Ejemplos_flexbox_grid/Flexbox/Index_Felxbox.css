@@ -1,0 +1,55 @@
+.centrado {
+  display: flex;
+  justify-content: center; /* eje principal */
+  align-items: center;     /* eje cruzado */
+  height: 100vh;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+}
+.barra { display: flex; gap: 1rem; align-items: center; }
+.salir { margin-left: auto; } /* absorbe todo el espacio libre */
+.tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.tarjeta {
+  flex: 1 1 250px; /* crece, encoge, base de 250px */
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+.layout { display: flex; gap: 2rem; }
+.lateral { flex: 0 0 250px; } /* no crece ni encoge: siempre 250px */
+.contenido { flex: 1; }        /* ocupa el resto */
+
+.fila { display: flex; gap: 1rem; }
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.card button { margin-top: auto; }
+.media { display: flex; align-items: flex-start; gap: 1rem; }
+.avatar { width: 64px; height: 64px; flex-shrink: 0; border-radius: 50%; }
+.texto { flex: 1; }
+.contenedor { display: flex; gap: 1rem; }
+.lateral { flex: 0 0 200px; }
+.principal { flex: 1; }
+
+@media (max-width: 600px) {
+  .contenedor { flex-direction: column; }
+  .lateral { order: 2; } /* se muestra después */
+}
+.buscador { display: flex; }
+.buscador input { flex: 1; min-width: 0; padding: 0.5rem; }
+.buscador button { flex: none; padding: 0.5rem 1rem; }
