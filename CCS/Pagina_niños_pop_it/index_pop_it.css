@@ -1,0 +1,236 @@
+html {
+    scroll-behavior: smooth;
+}
+:root{
+    --naranja:#fdbf6a;
+    --naranja-claro:#fde0b5;
+    --menta:#c8f2ee;
+    --gris-oscuro: #333333;
+    --blanco:#ffffff;
+    --negro:#000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--negro);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+Ul{
+    list-style: none;
+}
+
+/*------------ 1. CABECERA --------------------- */
+.header {
+    background-color: var(--naranja);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 80px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.menu {
+    display: flex;
+    gap: 70px;
+}
+
+.menu a {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.menu a:hover {
+    color: var(--blanco);
+}
+
+/*========================== 2. HERO ================== */
+
+.hero {
+    background-color: var(--naranja);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 80px;
+}
+
+.hero-texto{
+    width: 50%;
+    position: relative;
+    z-index: 2;    
+}
+
+.hero h1{
+    font-size: 110px;
+    font-weight: 900;
+    color: var(--blanco);
+    line-height: 1;
+}
+
+.hero__subtitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--blanco);
+    margin-top: 30px;
+    margin-bottom: 80px;
+}
+
+.boton-grande {
+    display: inline-block;
+    background-color: var(--menta);
+    font-weight: 500;
+    font-size: 24px;
+    padding: 18px 75px;
+    border-radius: 30px;
+}
+
+.boton-grande:hover {
+    background-color: var(--blanco);
+    
+}
+
+.hero-imagen {
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.producto-hero {
+    width: 705px;
+    max-width: none;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/*========================== 3. ¿Qué es POP IT? ================== */
+.que-es {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+/* Estilo común para todos los títulos h2 */
+h2 {
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.que-es p {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+}   
+
+/*========================== 4. PRODUCTOS ================== */
+.productos {
+    background-color: var(--menta);
+    text-align: center;
+    padding: 100px 80px;   
+}
+
+.lista-productos {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.producto img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.producto h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.boton-pequeño {
+    background-color: var(--naranja);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 30px;
+}
+
+.boton-pequeño:hover {
+    background-color: var(--blanco);
+}
+
+/*========================== 5. REGLAS DEL JUEGO ================== */
+.reglas {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 80px;
+}
+
+.reglas-texto {
+    width: 55%;
+    position: relative;
+}
+
+.reglas-texto li {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 8    px;
+}
+
+.reglas-imagen {
+    width: 450px;
+    position: relative;    
+}
+
+.mancha {
+    position: absolute;
+}
+
+.mancha-reglas {
+    top: 150px;
+    left: 145px;
+    width: 1100px;
+}
+
+/*========================== 6. FOOTER ================== */
+.footer {
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 80px;
+}
+
+.footer a:hover {
+    color: var(--naranja);
+}
