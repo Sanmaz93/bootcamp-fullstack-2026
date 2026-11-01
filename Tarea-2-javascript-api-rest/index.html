@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi tienda|Fake store API</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+<!---Encabezado de la página--->
+    <header>
+        <h1>Mi tienda</h1>
+        <p>Bienvenido a nuestra tienda virtual API store</p>
+    </header>
+
+    <main>
+        <!---mostramos cargando o un mensaje de error--->
+        <p id="mensaje" class="mensaje">Cargando productos...</p>
+
+        <!---contenedor vacio se llena con las cards javascript--->
+        <section id="contenedor-productos" class="grilla"></section>
+    </main>
+
+    <!---ventana emergente para el detalle de un producto--->
+    <dialog id="modal" class="modal">
+        <button id="cerrar-modal" class="boton-cerrar" arial-label="cerrar">X</button>
+        <div id="detalle-producto" class="detalle"></div>
+    </dialog>
+
+    <!--conectamos JavaScript-->
+    <script src="JavaScript/app.js"></script>
+</body>
+</html>
