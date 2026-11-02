@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>isme | Leggins deportivos para mujeres</title>
+    <meta name="description" content="isme: leggins deportivos para mujer que no transparenta, se mueven contigo y vienen en tallas de xs a 3xl.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS Style/styles.css">
+</head>
+<body>
+<!-- Header -->
+<header>
+    <nav class="navbar-expand-lg navbar-dark fixed-top navbar-isme">
+        <div class="container">
+          <a class="navbar-brand logo" href="#inicio">isme</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#nosotras">Nosotras</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#catalogo">Cátalogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#compra">Compra</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header> 
+<main>
+<!-- === Banner Principal ===  -->
+
+ <section id="inicio" class="hero">
+    <div class="container">
+     <h1 class="hero-marca">isme</h1>
+     <p class="hero-text">Leggins hechos para tu cuerpo, no para un molde</p>
+    </div>        
+  </section>
+
+<!-- Sección introducción + CTA -->
+ <section id="nosotras" class="seccion">
+    <div class="container">
+     <div class="row aling-items-center g-4">
+      <div class="col-12 col-lg-5">
+        <h2 class="titulo">Diseñados por mujeres que entrenan</h2>
+      </div>
+      <div class="col-12 col-lg-7">
+        <p class="texto-grande">Nos cansamos de leggins que transparentan en la sentadilla, que se bajan al correr o que solo llegan hasta la talla L. Por eso creamos isme: prendas que sienten como tuyas desde el primer día, en tallas desde la XS a la 3XL.</p>
+        <a href="#compra" class="btn btn-isme">Comprar ahora</a>
+      </div>
+     </div>
+    </div>
+ </section>
+
+<!-- Catálogo -->
+<section id="catalogo" class="seccion seccion-clara">
+ <div class="container">
+    <h2 class="titulo mb-2">La colección</h2>
+    <p class="mb-5">Toca la foto para ver todos los detalles de cada leggin</p>
+
+    <div class="row g-4">
+        <div class="col-12 col-md-4">
+         <article class="producto">
+          <button type="button" class="producto-foto" data-id="1"
+        data-bs-toggle="modal" data-bs-target="#modalProducto">
+           <img src="img/leggin-alba.jpg" alt="Leggin Alba de tiro alto" loagind="lazy">
+          </button>
+          <h3 class="producto-nombre">Leggin Alba</h3>
+          <p class="producto-precio">$129.900</p>
+          <a href="#compra" class="btn btn-isme btn-comprar" data-id="1">Comprar</a>  
+         </article>   
+    </div>
+    <div class="col-12 col-md-4">
+     <article class="producto">
+      <button type="button" class="producto-foto" data-id="2" data-bs-toggle="modal" data-bs-target="#modalProducto">
+        <img src="img/leggin-cumbre.jpg" alt="Leggin Cumbre para correr con bolsillos" loading="lazy">
+      </button>
+      <h3 class="producto-nombre">Leggin Cumbre</h3>
+      <p class="producto-precio">$149.900</p>
+      <a href="#compra" class="btn btn-isme btn-comprar" data-id="2">Comprar</a>
+     </article>   
+    </div>
+    <div class="col-12 col-md-4">
+     <article class="producto">
+      <button type="button" class="producto-foto" data-id="3" data-bs-toggle="modal" data-bs-target="#modalProducto">
+        <img src="img/leggin-raiz.jpg" alt="Leggin Raíz sin costuras para yoga" loading="lazy">
+      </button>
+      <h3 class="producto-nombre">Leggin Raíz</h3>
+      <p class="producto-precio">$139.900</p>
+      <a href="#compra" class="btn btn-isme btn-comprar" data-id="3">Comprar</a>
+     </article>
+    </div>
+   </div> 
+ </div>
+</section>
+ <!-- ================= VENTANA DEL PRODUCTO (MODAL) ================= -->
+    <div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="modalTitulo" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modalTitulo">Producto</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-4">
+              <div class="col-12 col-md-5">
+                <img id="modalImagen" src="" alt="" class="img-fluid modal-imagen">
+              </div>
+              <div class="col-12 col-md-7">
+                <p id="modalDescripcion"></p>
+                <ul id="modalDetalles" class="lista-detalles"></ul>
+                <p class="producto-precio" id="modalPrecio"></p>
+                <button type="button" class="btn btn-isme" id="modalComprar" data-bs-dismiss="modal">
+                  Comprar este leggin
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- ================= SECCIÓN 4: BENEFICIOS ================= -->
+    <section id="beneficios" class="seccion seccion-oscura">
+      <div class="container">
+        <h2 class="titulo mb-5">Por qué isme</h2>
+ 
+        <!-- col-md-6 = dos columnas desde tablet; en celular quedan una debajo de otra -->
+        <div class="row gx-4 gy-5">
+          <div class="col-12 col-md-6 beneficio">
+            <i class="bi bi-eye-slash beneficio-icono" aria-hidden="true"></i>
+            <div>
+              <h3>No transparenta</h3>
+              <p>Probada en sentadillas profundas: la tela es opaca desde cualquier ángulo.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 beneficio">
+            <i class="bi bi-arrows-angle-expand beneficio-icono" aria-hidden="true"></i>
+            <div>
+              <h3>Se mueve contigo</h3>
+              <p>Elasticidad en cuatro direcciones que recupera su forma lavada tras lavada.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 beneficio">
+            <i class="bi bi-droplet beneficio-icono" aria-hidden="true"></i>
+            <div>
+              <h3>Secado rápido</h3>
+              <p>La tela saca el sudor hacia afuera para que termines tu rutina seca y cómoda.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 beneficio">
+            <i class="bi bi-rulers beneficio-icono" aria-hidden="true"></i>
+            <div>
+              <h3>Tallas de XS a 3XL</h3>
+              <p>Moldería ajustada a cuerpos reales, con el mismo diseño en todas las tallas.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 beneficio">
+            <i class="bi bi-recycle beneficio-icono" aria-hidden="true"></i>
+            <div>
+              <h3>Material reciclado</h3>
+              <p>Usamos poliamida hecha con botellas y redes de pesca recuperadas.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 beneficio">
+            <i class="bi bi-arrow-repeat beneficio-icono" aria-hidden="true"></i>
+            <div>
+              <h3>Cambio de talla gratis</h3>
+              <p>Si no te queda perfecta, la cambias sin costo durante los primeros 30 días.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   <!-- ================= SECCIÓN 5: COMPRA ================= -->
+    <section id="compra" class="seccion">
+      <div class="container">
+        <h2 class="titulo mb-5">Tu compra</h2>
+ 
+        <div class="row gx-4 gy-5 align-items-start">
+          <div class="col-12 col-lg-5">
+            <img id="compraImagen" src="img/leggin-alba.jpg" alt="Leggin Alba de tiro alto" class="img-fluid compra-imagen">
+          </div>
+ 
+          <div class="col-12 col-lg-7">
+            <h3 class="compra-nombre" id="compraNombre">Leggin Alba</h3>
+            <p id="compraDescripcion">Tiro alto y compresión media para tu rutina diaria.</p>
+            <p>Precio por unidad: <strong id="compraPrecioUnidad">$129.900</strong></p>
+ 
+            <!-- Tallas: radio buttons con estilo de botón (btn-check de Bootstrap) -->
+            <fieldset class="mb-4">
+              <legend class="etiqueta">Talla</legend>
+              <div class="tallas">
+                <input type="radio" class="btn-check" name="talla" id="tallaXS" value="XS">
+                <label class="btn btn-talla" for="tallaXS">XS</label>
+                <input type="radio" class="btn-check" name="talla" id="tallaS" value="S">
+                <label class="btn btn-talla" for="tallaS">S</label>
+                <input type="radio" class="btn-check" name="talla" id="tallaM" value="M">
+                <label class="btn btn-talla" for="tallaM">M</label>
+                <input type="radio" class="btn-check" name="talla" id="tallaL" value="L">
+                <label class="btn btn-talla" for="tallaL">L</label>
+                <input type="radio" class="btn-check" name="talla" id="tallaXL" value="XL">
+                <label class="btn btn-talla" for="tallaXL">XL</label>
+                <input type="radio" class="btn-check" name="talla" id="talla2XL" value="2XL">
+                <label class="btn btn-talla" for="talla2XL">2XL</label>
+                <input type="radio" class="btn-check" name="talla" id="talla3XL" value="3XL">
+                <label class="btn btn-talla" for="talla3XL">3XL</label>
+              </div>
+            </fieldset>
+ 
+            <!-- Cantidad con botones de restar y sumar -->
+            <div class="mb-4">
+              <label class="etiqueta" for="cantidad">Cantidad</label>
+              <div class="cantidad">
+                <button type="button" class="btn btn-cantidad" id="botonMenos" aria-label="Quitar una unidad">−</button>
+                <input type="number" id="cantidad" value="1" min="1" max="10" readonly>
+                <button type="button" class="btn btn-cantidad" id="botonMas" aria-label="Agregar una unidad">+</button>
+              </div>
+            </div>
+ 
+            <p class="total">Total a pagar: <span id="total">$129.900</span></p>
+ 
+            <button type="button" class="btn btn-isme btn-lg" id="botonAgregar">Agregar al carrito</button>
+ 
+            <!-- Aquí JavaScript escribe el mensaje de éxito o de error -->
+            <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main> 
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-12 col-md-6">
+          <p class="logo mb-1">isme</p>
+          <p class="mb-0">Leggins deportivos para mujer.</p>
+        </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <a href="#" class="footer-red" aria-label="Instagram de isme"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="footer-red" aria-label="TikTok de isme"><i class="bi bi-tiktok"></i></a>
+          <a href="#" class="footer-red" aria-label="WhatsApp de isme"><i class="bi bi-whatsapp"></i></a>
+          <p class="mb-0 mt-2">© <span id="anio">2026</span> isme. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+ 
+  <!-- Los scripts van al final del body para que el HTML ya exista cuando se ejecuten -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="JavaScript/main.js"></script> 
+</body>
+</html>
