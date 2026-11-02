@@ -1,0 +1,418 @@
+/* =========================================================
+   1. VARIABLES: colores y tipografías de la marca en un solo lugar
+   ========================================================= */
+:root {
+  --ciruela: #2E1A3B;     /* color principal oscuro */
+  --orquidea: #8E4DB8;    /* color de botones y acentos */
+  --lila: #E6DAF3;        /* fondos suaves y detalles */
+  --niebla: #FBF9FD;      /* fondo general */
+  --menta: #2FA584;       /* mensajes de éxito */
+  --error: #C2364B;       /* mensajes de error */
+
+  --fuente-titulos: "Unbounded", "Arial Black", sans-serif;
+  --fuente-texto: "Manrope", "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================================================
+   2. ESTILOS GENERALES
+   ========================================================= */
+html {
+  scroll-behavior: smooth;   /* los enlaces #seccion se desplazan suavemente */
+  scroll-padding-top: 90px;  /* evita que el menú fijo tape el título de la sección */
+}
+
+body {
+  font-family: var(--fuente-texto);
+  background-color: var(--niebla);
+  color: var(--ciruela);
+  line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+  font-family: var(--fuente-titulos);
+}
+
+.seccion {
+  padding: 96px 0;
+}
+
+.seccion-clara {
+  background-color: var(--lila);
+}
+
+.seccion-oscura {
+  background-color: var(--ciruela);
+  color: var(--niebla);
+}
+
+.titulo {
+  font-size: clamp(1.75rem, 4vw, 2.75rem); /* clamp = tamaño mínimo, ideal y máximo */
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.texto-grande {
+  font-size: 1.2rem;
+  max-width: 60ch; /* líneas cortas = texto más fácil de leer */
+}
+
+/* =========================================================
+   3. BOTONES
+   ========================================================= */
+.btn-isme {
+  background-color: var(--orquidea);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px; /* forma de píldora */
+  padding: 12px 28px;
+}
+
+.btn-isme:hover,
+.btn-isme:focus-visible {
+  background-color: var(--ciruela);
+  color: #fff;
+}
+
+.seccion-oscura .btn-isme:hover {
+  background-color: var(--lila);
+  color: var(--ciruela);
+}
+
+/* Contorno visible al navegar con teclado (accesibilidad) */
+a:focus-visible,
+button:focus-visible,
+.btn-check:focus-visible + .btn {
+  outline: 3px solid var(--orquidea);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   4. HEADER / MENÚ
+   ========================================================= */
+.navbar-isme {
+  background-color: var(--ciruela);
+  padding-top: 16px;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--lila);
+}
+
+.navbar-isme .navbar-brand:hover {
+  color: #fff;
+}
+
+.navbar-isme .nav-link {
+  color: var(--lila);
+  font-weight: 500;
+}
+
+.navbar-isme .nav-link:hover {
+  color: #fff;
+}
+
+/* Solo en escritorio (992px o más), donde el menú está en una sola línea */
+@media (min-width: 992px) {
+  .navbar-isme .navbar-nav {
+    gap: 32px; /* espacio entre cada opción del menú */
+  }
+}
+
+/* =========================================================
+   5. SECCIÓN 1: BANNER
+   ========================================================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;  /* el texto queda abajo, sobre la foto */
+  padding-bottom: 64px;
+  /* Capa de color encima de la foto para que el texto se lea bien */
+  background-image:
+    linear-gradient(to top, rgba(46, 26, 59, 0.85), rgba(46, 26, 59, 0.15)),
+    url("../img/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  color: var(--niebla);
+}
+
+.hero-marca {
+  font-size: clamp(6rem, 24vw, 10rem);
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  color: var(--lila);
+  margin-bottom: 16px;
+}
+
+.hero-texto {
+  font-size: clamp(1.1rem, 2.5vw, 2rem);
+  max-width: 32ch;
+  margin: 0;
+}
+
+/* =========================================================
+   6. SECCIÓN 3: CATÁLOGO
+   ========================================================= */
+.producto-foto {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  border-radius: 24px;
+  overflow: hidden;   /* recorta la imagen con las esquinas redondeadas */
+  cursor: zoom-in;    /* le indica a la usuaria que puede ampliar */
+}
+
+.producto-foto img {
+  width: 100%;
+  aspect-ratio: 4 / 5;  /* todas las fotos del mismo tamaño */
+  object-fit: cover;    /* recorta sin deformar */
+  transition: transform 0.4s ease;
+}
+
+.producto-foto:hover img {
+  transform: scale(1.04);
+}
+
+.producto-nombre {
+  font-size: 1.25rem;
+  margin-top: 20px;
+  margin-bottom: 4px;
+}
+
+.producto-precio {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--orquidea);
+}
+
+/* Ventana del producto (modal) */
+.modal-content {
+  border: none;
+  border-radius: 24px;
+  background-color: var(--niebla);
+  color: var(--ciruela);
+}
+
+.modal-title {
+  font-size: 1.5rem;
+}
+
+.modal-imagen {
+  border-radius: 16px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  width: 100%;
+}
+
+.lista-detalles {
+  padding-left: 1.2rem;
+}
+
+.lista-detalles li {
+  margin-bottom: 6px;
+}
+
+/* =========================================================
+   7. SECCIÓN 4: BENEFICIOS
+   ========================================================= */
+.beneficio {
+  display: flex;   /* icono a la izquierda, texto a la derecha */
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.beneficio-icono {
+  flex-shrink: 0;  /* evita que el icono se aplaste */
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--lila);
+  color: var(--ciruela);
+  font-size: 1.5rem;
+}
+
+.beneficio h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.beneficio p {
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* =========================================================
+   8. SECCIÓN 5: COMPRA
+   ========================================================= */
+.compra-imagen {
+  border-radius: 24px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  width: 100%;
+}
+
+.compra-nombre {
+  font-size: 1.75rem;
+}
+
+.etiqueta {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.tallas {
+  display: flex;
+  flex-wrap: wrap;  /* si no caben, bajan a la siguiente línea en celular */
+  gap: 8px;
+}
+
+.btn-talla {
+  min-width: 56px;
+  border: 2px solid var(--ciruela);
+  border-radius: 12px;
+  color: var(--ciruela);
+  font-weight: 700;
+}
+
+.btn-talla:hover {
+  background-color: var(--lila);
+}
+
+/* Talla seleccionada: el radio marcado cambia el estilo de su label */
+.btn-check:checked + .btn-talla {
+  background-color: var(--ciruela);
+  border-color: var(--ciruela);
+  color: #fff;
+}
+
+.cantidad {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid var(--ciruela);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.btn-cantidad {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--ciruela);
+}
+
+.btn-cantidad:hover {
+  background-color: var(--lila);
+}
+
+.btn-cantidad:disabled {
+  opacity: 0.3;
+}
+
+#cantidad {
+  width: 56px;
+  border: none;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  background: transparent;
+  color: var(--ciruela);
+}
+
+/* Oculta las flechas que el navegador pone en los input number */
+#cantidad::-webkit-outer-spin-button,
+#cantidad::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#cantidad {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.total {
+  font-size: 1.25rem;
+  margin-bottom: 24px;
+}
+
+#total {
+  font-family: var(--fuente-titulos);
+  font-size: 1.75rem;
+  color: var(--orquidea);
+}
+
+.mensaje {
+  margin-top: 16px;
+  font-weight: 700;
+  min-height: 1.6em;  /* reserva el espacio para que la página no "salte" */
+}
+
+.mensaje-exito {
+  color: var(--menta);
+}
+
+.mensaje-error {
+  color: var(--error);
+}
+
+/* =========================================================
+   9. FOOTER
+   ========================================================= */
+.footer {
+  background-color: var(--ciruela);
+  color: var(--lila);
+  padding: 48px 0;
+}
+
+.footer-red {
+  color: var(--lila);
+  font-size: 1.5rem;
+  margin-left: 16px;
+}
+
+.footer-red:first-child {
+  margin-left: 0;
+}
+
+.footer-red:hover {
+  color: #fff;
+}
+
+/* =========================================================
+   10. RESPONSIVE: ajustes extra para celulares
+   (Bootstrap ya hace la mayoría con col-12, col-md-4, etc.)
+   ========================================================= */
+@media (max-width: 767px) {
+  .seccion {
+    padding: 64px 0;
+  }
+
+  .hero {
+    min-height: 80vh;
+  }
+}
+
+/* Respeta a quienes desactivan las animaciones en su dispositivo */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .producto-foto img {
+    transition: none;
+  }
+}
