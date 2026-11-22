@@ -38,3 +38,40 @@ const registrar = async (peticion, respuesta) => {
 module.exports = {
     registrar
 }
+const login = async (peticion, respuesta) => {
+    try {
+        // 1. Guardamos en variables el email y password de peticion.body
+        const email = peticion.body.email
+        const password = peticion.body.password
+
+        // 2. Buscamos el usuario en la base de datos
+        const user = await User.findOne({ email: email })
+
+        // 3. Si NO existe -> 404 (not found)
+        if (!user) return respuesta.status(404).json({
+            msg: `El usuario ${email} no existe en la base de datos`
+        })
+
+        // 4. Si existe, validamos que el password coincida
+        const passwordsCoinciden = await bcrypt.compare(password, user.password)
+
+        // 5a. Si NO coinciden -> 400 (bad request)
+        if (!passwordsCoinciden) return respuesta.status(400).json({
+            msg: 'Los passwords no coinciden'
+        })
+
+        // 5b. Si coinciden -> 200 (petición exitosa)
+        return respuesta.status(200).json({
+            msg: 'Inicio de sesión exitoso'
+        })
+    } catch (error) {
+        return respuesta.status(500).json({
+            msg: `Error al iniciar sesión: ${error.message}`
+        })
+    }
+}
+
+module.exports = {
+    registrar,
+    login
+}
